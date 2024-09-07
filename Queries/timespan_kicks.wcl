@@ -1,0 +1,8 @@
+# A better way is to check the natty interrupt check inside logs. This will only check if they cast their interrupt.
+#!! This does not check if it was successful !!
+
+ability.id IN 
+    (
+        47528, 183752, 106839, 78675, 351338, 147362, 187707, 2139, 116705, 96231, 
+        15487, 1766, 57994, 119910, 119914, 6552
+    )

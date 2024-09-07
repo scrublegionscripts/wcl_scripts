@@ -1,0 +1,27 @@
+# This will filter a buff you want to search for over a fight/night. 
+# Ensure you change ability.name = 'BUFF HERE' to what you're checking for. 
+# This can be changed to applydebuff and similar name syntax.
+# Sneakily, this can show CCs broken by characters if using to check enemies, then damage done. It will show the first damage event that broke the CC.
+
+IN RANGE FROM type = 'applybuff' AND ability.name = 'BUFF HERE' TO type = 'removebuff' AND ability.name = 'BUFF HERE' END
+
+
+# If you want specificity, do the below one
+IN RANGE FROM type = 'applydebuff' 
+    AND ability.name = 'DebuffHere' 
+    TO type = 'removedebuff' 
+    AND ability.name = 'DebuffHere' 
+    GROUP BY target 
+    ON source END 
+    AND ability.id IN (
+        48743, 49039, 48792, 51052, 48707, 49998, 196718, 196555, 198589, 319454, 
+        108238, 124974, 22812, 22842, 5487, 61336, 374227, 363916, 374348, 360827, 
+        186265, 109304, 264735, 272679, 414658, 45438, 55342, 110959, 414660, 
+        342245, 235450, 235313, 235219, 11426, 115203, 122783, 122470, 633, 
+        1022, 642, 6940, 498, 403876, 184662, 108968, 15286, 19236, 
+        586, 47585, 5277, 31224, 185311, 1966, 198103, 108271, 108281, 
+        108270, 104773, 108416, 452930, 6789, 234153, 383762, 97462, 202168, 23920, 
+        386208, 118038, 190456, 184364, 6262, 415569, 423414, 370511) AND source.role != 'tank' 
+    OR ability.id IN (
+        8936, 116670, 85673, 2061, 974) 
+    AND source.role != 'healer'

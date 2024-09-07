@@ -1,0 +1,8 @@
+# "30000 = 0:30
+# 60000 = 1:00
+# 90000 = 1:30
+# 120000 = 2:00
+# 180000 = 3:00
+# 240000 = 4:00"
+# f(x,y) where x is minutes and y is seconds => 100*(60x + y)
+timestamp between XXXXX and XXXXX
